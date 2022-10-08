@@ -1,4 +1,4 @@
-package wyk1.zad2;
+package zjazd1.wyk1.zad2;
 
 public class Converter {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package wyk1.zad5;
+package zjazd1.wyk1.zad5;
 
 public class Zad5 {
     public static void main(String[] args) {

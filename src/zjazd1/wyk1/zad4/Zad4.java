@@ -1,4 +1,4 @@
-package wyk1.zad4;
+package zjazd1.wyk1.zad4;
 
 public class Zad4 {
 
