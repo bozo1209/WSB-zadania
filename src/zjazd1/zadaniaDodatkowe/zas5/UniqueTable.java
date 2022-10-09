@@ -14,15 +14,16 @@ public class UniqueTable extends DynamicTable {
 
     @Override
     public void addItem(double newItem) {
-        long count = Arrays.stream(super.getArr()).filter(item -> item == newItem).count();
-        if (count == 0){
+        boolean itemDontExist = Arrays.stream(super.getArr()).
+                filter(item -> item == newItem).count() == 0L;
+        if (itemDontExist){
             super.addItem(newItem);
         }
     }
 
     public void deleteItem(double deleteItem){
         boolean itemDontExist = Arrays.stream(super.getArr()).
-                filter(e -> e == deleteItem).count() == 0L;
+                filter(item -> item == deleteItem).count() == 0L;
         if (itemDontExist) return;
 
         Random random = new Random();
