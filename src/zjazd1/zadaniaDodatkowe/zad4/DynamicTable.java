@@ -13,7 +13,12 @@ public class DynamicTable {
 //        this.arr = new double[i];
 //    }
 
-    void addItem(double newItem) {
+
+    public double[] getArr() {
+        return arr;
+    }
+
+    public void addItem(double newItem) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == 0.0) {
                 arr[i] = newItem;
@@ -27,7 +32,7 @@ public class DynamicTable {
         }
     }
 
-    void deleteItem(int deleteIndex) {
+    public void deleteItem(int deleteIndex) {
         arr = resize(arr, deleteIndex);
     }
 
