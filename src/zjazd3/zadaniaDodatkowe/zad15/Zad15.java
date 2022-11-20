@@ -1,6 +1,8 @@
 package zjazd3.zadaniaDodatkowe.zad15;
 
 import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Zad15 {
 
@@ -40,6 +42,7 @@ public class Zad15 {
         System.out.println(function.apply("test"));
         System.out.println(function2.apply("test"));
 
-
+        String collect = Stream.of("test").map(function).map(function2).collect(Collectors.joining(" "));
+        System.out.println(collect);
     }
 }
