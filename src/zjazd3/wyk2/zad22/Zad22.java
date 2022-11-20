@@ -32,7 +32,9 @@ public class Zad22 {
     }
 
     public static String normalizeTitle2(String value){
-        String[] s = value.trim().replaceAll("\s+", " ").split("\s");
+        String[] s = value.trim()
+                        .replaceAll("\s+", " ")
+                        .split("\s");
 
         for (int i = 0; i < s.length; i++){
             s[i] = s[i].substring(0, 1).toUpperCase() + s[i].substring(1).toLowerCase();
