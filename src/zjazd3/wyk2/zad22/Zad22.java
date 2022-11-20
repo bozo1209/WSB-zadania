@@ -11,8 +11,12 @@ public class Zad22 {
 
         System.out.println(text1);
         System.out.println(normalizeTitle(text1));
+        System.out.println(normalizeTitle2(text1));
+        System.out.println(normalizeTitle(text1).equals(normalizeTitle2(text1)));
         System.out.println(text2);
         System.out.println(normalizeTitle(text2));
+        System.out.println(normalizeTitle2(text2));
+        System.out.println(normalizeTitle(text2).equals(normalizeTitle2(text2)));
 
     }
 
@@ -25,6 +29,16 @@ public class Zad22 {
                     .map(s -> s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase())
                     .collect(Collectors.joining(" "));
 
+    }
+
+    public static String normalizeTitle2(String value){
+        String[] s = value.trim().replaceAll("\s+", " ").split("\s");
+
+        for (int i = 0; i < s.length; i++){
+            s[i] = s[i].substring(0, 1).toUpperCase() + s[i].substring(1).toLowerCase();
+        }
+
+        return String.join(" ", s);
     }
 
 }
