@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/WSB-zadania.iml" filepath="$PROJECT_DIR$/WSB-zadania.iml" />
       <module fileurl="file://$PROJECT_DIR$/databases/databases.iml" filepath="$PROJECT_DIR$/databases/databases.iml" />
       <module fileurl="file://$PROJECT_DIR$/p53/p53.iml" filepath="$PROJECT_DIR$/p53/p53.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p55/p55.iml" filepath="$PROJECT_DIR$/p55/p55.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zad27/zad27.iml" filepath="$PROJECT_DIR$/zad27/zad27.iml" />
     </modules>
   </component>
 </project>
