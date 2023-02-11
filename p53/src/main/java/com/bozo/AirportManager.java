@@ -1,9 +1,6 @@
 package com.bozo;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -13,8 +10,10 @@ import static java.lang.String.format;
 public class AirportManager implements AutoCloseable {
 
     private final Statement statement;
+    private final Connection connection;
 
     public AirportManager(Connection connection) throws SQLException {
+        this.connection = connection;
         this.statement = connection.createStatement();
     }
 
@@ -36,9 +35,33 @@ public class AirportManager implements AutoCloseable {
         }
     }
 
+    public Optional<Airport> getAirport2(String code) throws SQLException{
+        try(PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM airports WHERE code = ?")){
+            preparedStatement.setString(1, code);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()){
+                return Optional.of(asAirport(resultSet));
+            }else {
+                return Optional.empty();
+            }
+        }
+
+    }
+
     public void addAirport(Airport airport) throws SQLException {
         statement.executeUpdate(format("INSERT INTO airports VALUES (\"%s\", \"%s\", %f, %f)",
                 airport.getCode(), airport.getName(), airport.getLatitude(), airport.getLongitude()));
+    }
+
+    public void addAirport2(Airport airport) throws SQLException {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO airports VALUES (?,?,?,?)")){
+            preparedStatement.setString(1, airport.getCode());
+            preparedStatement.setString(2, airport.getName());
+            preparedStatement.setDouble(3,airport.getLatitude());
+            preparedStatement.setDouble(4,airport.getLongitude());
+            preparedStatement.executeUpdate();
+        }
     }
 
     public void updateAirport(Airport airport) throws SQLException {
