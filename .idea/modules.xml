@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/WSB-zadania.iml" filepath="$PROJECT_DIR$/WSB-zadania.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databases/databases.iml" filepath="$PROJECT_DIR$/databases/databases.iml" />
+      <module fileurl="file://$PROJECT_DIR$/p53/p53.iml" filepath="$PROJECT_DIR$/p53/p53.iml" />
     </modules>
   </component>
 </project>
