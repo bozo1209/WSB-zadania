@@ -25,6 +25,14 @@ public class AirportManager implements AutoCloseable {
         return Optional.ofNullable(session.find(Airport.class, code));
     }
 
+    public Optional<Airport> getAirport2(String code) {
+        return Optional.ofNullable(session.load(Airport.class, code));
+    }
+
+    public Optional<Airport> getAirport3(String code) {
+        return Optional.ofNullable(session.get(Airport.class, code));
+    }
+
     public void addAirport(Airport airport) {
         session.getTransaction().begin();
         session.save(airport);

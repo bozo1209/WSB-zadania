@@ -30,6 +30,12 @@ public class Main {
             System.out.printf("Check (4): %s%n", airportManager.getAirport("WRO"));
             System.out.printf("Check (5): %s%n", airportManager.getAirport("BCN"));
 
+            System.out.printf("Check (4): %s%n", airportManager.getAirport2("WRO"));
+//            System.out.printf("Check (4): %s%n", airportManager.getAirport2("BCN"));
+
+            System.out.printf("Check (4): %s%n", airportManager.getAirport3("WRO"));
+            System.out.printf("Check (5): %s%n", airportManager.getAirport3("BCN"));
+
             // Update airport
             airportManager.updateAirport(new Airport("WRO", "Wroclaw Miasto Spotkan", 1.1, 11.11));
 
